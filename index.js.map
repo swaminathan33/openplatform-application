@@ -1,0 +1,84 @@
+{
+	"routes": [
+		{
+			"method": "API",
+			"url": "/api/",
+			"auth": 1,
+			"id": "products",
+			"name": "List of products"
+		},
+		{
+			"method": "API",
+			"url": "/api/",
+			"auth": 1,
+			"id": "profiles",
+			"name": "List of profiles"
+		},
+		{
+			"method": "API",
+			"url": "/api/",
+			"auth": 1,
+			"id": "setup_read",
+			"name": "Read configuration"
+		},
+		{
+			"method": "API",
+			"url": "/api/",
+			"auth": 1,
+			"id": "setup_save",
+			"input": "*name,totalapi,$tms:Boolean,secret_tms,op_reqtoken,op_restoken",
+			"name": "Save configuration"
+		},
+		{
+			"method": "API",
+			"url": "/api/",
+			"auth": 1,
+			"id": "account",
+			"name": "Read account data"
+		},
+		{
+			"method": "GET",
+			"url": "/*",
+			"auth": 1
+		}
+	],
+	"plugins": [
+		{
+			"id": "products",
+			"name": "@(Products)",
+			"permissions": "products"
+		},
+		{
+			"id": "profiles",
+			"name": "@(Profiles)",
+			"permissions": "profiles"
+		},
+		{
+			"id": "setup",
+			"name": "@(Configuration)",
+			"permissions": "setup"
+		}
+	],
+	"actions": [
+		{
+			"name": "Products/list",
+			"permissions": "products"
+		},
+		{
+			"name": "Profiles/list",
+			"permissions": "profiles"
+		},
+		{
+			"name": "Setup/save",
+			"input": "*name,totalapi,$tms:Boolean,secret_tms,op_reqtoken,op_restoken",
+			"permissions": "setup"
+		},
+		{
+			"name": "Setup/read",
+			"permissions": "setup"
+		},
+		{
+			"name": "Setup/account"
+		}
+	]
+}
